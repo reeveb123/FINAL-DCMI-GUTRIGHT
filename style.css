@@ -71,7 +71,7 @@ body {
 }
 
 .socials i {
-    font-size: 28px;
+    font-size: 40px;
     color: #fff;
     opacity: 0.85;
     cursor: pointer;
@@ -93,8 +93,9 @@ body {
 
 /* --- CAROUSEL ENGINE --- */
 .carousel-container {
-    position: relative; 
-    width: 100%;
+    position: flex; 
+  align-self: center;
+    width: 95%;
     margin-bottom: 40px;
 }
 
@@ -220,6 +221,7 @@ body {
     color: white;
     transition: 0.25s ease;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    margin-bottom: 10px;
 }
 
 .link-card:hover {
@@ -283,4 +285,130 @@ body {
     .socials {
         gap: 16px;
     }
+}
+.shop-title {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+
+    display: inline-block;
+
+    /* slow shake + slow scale */
+    animation: slowShake 1s infinite ease-in-out,
+               slowScale 1s infinite ease-in-out;
+}
+
+/* slow left-right subtle shake */
+@keyframes slowShake {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-2px); }
+    50%  { transform: translateX(2px); }
+    75%  { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+/* slow breathing scale */
+@keyframes slowScale {
+    0%   { transform: scale(1.2); }
+    50%  { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+/* SHOP SECTION */
+/* SHOP SECTION */
+.shop-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* SHOP NOW */
+.shop-title {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(28px, 4vw, 42px);
+    text-align: center;
+
+    animation:
+        slowShake 2s infinite ease-in-out,
+        slowScale 2s infinite ease-in-out;
+}
+
+/* CART */
+.cart-wrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    animation: shakeUponFill 1s infinite ease-in-out;
+}
+
+.cart {
+    font-size: 45px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+ color:green;
+     
+}
+
+/* FALLING BOX */
+.box {
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 3px;
+
+    position: absolute;
+    left: 50%;
+    top: -5px;
+
+    animation: fallIntoCart 1s infinite ease-in-out;
+   
+}
+
+@keyframes fallIntoCart {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.8);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(28px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:  translateY(35px) scale(0.3);
+    }
+}
+@keyframes shakeUponFill{
+
+  
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+
+}
+
+@keyframes slowShake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+}
+
+@keyframes slowScale {
+    0%,100% { scale: 1; }
+    50% { scale: 1.08; }
 }
