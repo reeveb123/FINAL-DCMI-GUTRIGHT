@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DCMI Link Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="style.css" rel="stylesheet">
+
+<style>
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="profile">
+        <img src="DCMI LOGO.png" alt="DCMI Logo" class="logo">
+        <div class="username">@DCMI</div>
+        <div class="company">Divergent Concepts Marketing Inc.</div>
+        <div class="socials">
+            <a href="https://www.facebook.com/DCMIKingsPremium"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@dcmiofficial"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://dcmiofficial.com/"><i class="fa-solid fa-globe"></i></a>
+        </div>
+    </div>
+
+    <div class="links">
+
+        <div class="carousel-container">
+            <button class="carousel-btn left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-btn right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+            
+            <div class="gallery-card">
+                
+                <div class="gallery-image-slider" id="imageSlider">
+                    <img src="hero.jpg" alt="Gut Right Slide 1">
+                    <img src="GUTRIGHT2.JPG" alt="Gut Right Slide 2">
+                    <img src="GUTRIGHT3.JPG" alt="Gut Right Slide 3">
+                </div>
+
+                <div class="gallery-info-image">
+                    <img src="GRtext1.png" alt="Gut Right Text" class="gr-text">
+                </div>
+
+            </div>
+        </div>
+
+        <a href="https://www.tiktok.com/@dcmiofficial" class="link-card tiktok-card">
+            <div class="link-left">
+                <div class="link-icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <div class="link-text">TikTok</div>
+            </div>
+        </a>
+
+        <a href="https://www.lazada.com.ph/shop/dcmi-official-store/" class="link-card lazada-card">
+            <div class="link-left">
+                <div class="link-icon">
+                    <img src="lazadaicon.png" alt="Lazada">
+                </div>
+                <div class="link-text">Lazada</div>
+            </div>
+        </a>
+
+        <a href="https://shopee.ph/shop/709383832" class="link-card shopee-card">
+            <div class="link-left">
+                <div class="link-icon">
+                    <img src="shopee logo.png" alt="Shopee">
+                </div>
+                <div class="link-text">Shopee</div>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+    const slider = document.getElementById('imageSlider');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    let autoScrollTimer;
+    const scrollInterval = 3000; // Time per slide in milliseconds (3 seconds)
+
+    // Function to slide forward or loop back round
+    function slideNext() {
+        const slideWidth = slider.offsetWidth;
+        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+        // If we are at the very last image, loop back to the first one smoothly
+        if (slider.scrollLeft >= maxScrollLeft - 5) {
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+        }
+    }
+
+    function slidePrev() {
+        const slideWidth = slider.offsetWidth;
+        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+        // If we are at the beginning, snap directly to the last image
+        if (slider.scrollLeft <= 5) {
+            slider.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+        } else {
+            slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+        }
+    }
+
+    // Handles resetting the timer smoothly on manual interaction
+    function resetAutoScroll() {
+        clearInterval(autoScrollTimer);
+        autoScrollTimer = setInterval(slideNext, scrollInterval);
+    }
+
+    // Arrow Event Listeners
+    nextBtn.addEventListener('click', () => {
+        slideNext();
+        resetAutoScroll();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        slidePrev();
+        resetAutoScroll();
+    });
+
+    // Initialize the engine automatically on page load
+    autoScrollTimer = setInterval(slideNext, scrollInterval);
+</script>
+
+</body>
+</html>
