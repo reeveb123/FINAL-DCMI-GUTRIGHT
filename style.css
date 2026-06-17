@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
+  
     background-image: url('BG3.png');
     background-size: cover;
     background-position: center;
@@ -21,7 +22,7 @@ body {
 .container {
     width: 100%;
     max-width: 700px;
-    background: rgba(50, 114, 209, 0.767);
+      background: rgba(29, 94, 216, 0.767);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 24px;
@@ -93,17 +94,17 @@ body {
 
 /* --- CAROUSEL ENGINE --- */
 .carousel-container {
-    position: flex; 
-  align-self: center;
+    position: relative;
     width: 95%;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
 }
 
 /* GALLERY CARD STYLES */
 .gallery-card {
     background-image: url('heroBG.jpg');
-    background-size: cover;
+    background-size:auto;
     background-position: center;
+    background-repeat: no-repeat;
     border-radius: 10px;
     padding: 12px;
     padding-bottom: 15px;
@@ -114,15 +115,6 @@ body {
 }
 
 /* THE HORIZONTAL SLIDER WINDOW FOR IMAGES ONLY */
-.gallery-image-slider {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-}
 
 /* Hide scrollbars on the slider element */
 .gallery-image-slider::-webkit-scrollbar {
@@ -134,16 +126,31 @@ body {
 }
 
 /* CHANNELS INDIVIDUAL CAROUSEL IMAGES ONLY */
+/* THE HORIZONTAL SLIDER WINDOW FOR IMAGES ONLY */
+.gallery-image-slider {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* CHANNELS INDIVIDUAL CAROUSEL IMAGES ONLY */
 .gallery-image-slider img {
     flex: 0 0 100%;
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    display: block;
+
+    /* Shows the entire image */
+    object-fit: contain;
+
     border-radius: 18px;
     scroll-snap-align: start;
 }
-
 /* THE LOWER AREA STAYS COMPLETELY STILL */
 .gallery-info-image {
     display: flex;
