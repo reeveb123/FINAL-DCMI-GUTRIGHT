@@ -222,6 +222,7 @@ body {
     transition: 0.25s ease;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
     margin-bottom: 10px;
+
 }
 
 .link-card:hover {
@@ -260,10 +261,17 @@ body {
 }
 
 /* BRAND CARDS */
-.tiktok-card, .lazada-card, .shopee-card {
+ .lazada-card, .shopee-card {
     font-weight: bold;
     font-size: clamp(18px, 4.5vw, 24px);
     text-align: center;
+  
+}
+.tiktok-card {
+      font-weight: bold;
+    font-size: clamp(18px, 4.5vw, 24px);
+    text-align: center;
+  margin-top: -30px;
 }
 
 .tiktok-card { background: linear-gradient(135deg, #000000, #1f1f1f); }
@@ -331,6 +339,7 @@ body {
     font-weight: bold;
     font-size: clamp(28px, 4vw, 42px);
     text-align: center;
+   
 
     animation:
         slowShake 2s infinite ease-in-out,
@@ -412,3 +421,4 @@ body {
     0%,100% { scale: 1; }
     50% { scale: 1.08; }
 }
+/* SERVICES PAGE CSS */
