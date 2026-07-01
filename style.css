@@ -268,11 +268,18 @@ body {
 }
 
 /* BRAND CARDS */
- .lazada-card, .shopee-card {
+  .shopee-card {
     font-weight: bold;
     font-size: clamp(18px, 4.5vw, 24px);
     text-align: center;
      display: none;
+  
+}
+ .lazada-card, {
+    font-weight: bold;
+    font-size: clamp(18px, 4.5vw, 24px);
+    text-align: center;
+ 
   
 }
 .tiktok-card {
