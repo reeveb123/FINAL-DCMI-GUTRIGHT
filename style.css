@@ -292,7 +292,7 @@ body {
 }
 
 .tiktok-card { background: linear-gradient(135deg, #000000, #1f1f1f); }
-.lazada-card { background: linear-gradient(135deg, #FFFFFF, #D3D3D3); }
+.lazada-card { background: linear-gradient(135deg, #5a00bf, #0024ff); }
 .shopee-card { background: linear-gradient(135deg, #ff7a18, #ff3c00); }
 
 /* RESPONSIVE BREAKPOINTS */
