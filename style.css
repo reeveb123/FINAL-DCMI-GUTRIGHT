@@ -284,6 +284,12 @@ body {
  
   
 }
+
+.lazada-card:hover{
+
+opacity: 50%;
+    
+}
 .tiktok-card {
       font-weight: bold;
     font-size: clamp(18px, 4.5vw, 24px);
