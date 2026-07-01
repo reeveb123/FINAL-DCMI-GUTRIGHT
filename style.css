@@ -272,6 +272,7 @@ body {
     font-weight: bold;
     font-size: clamp(18px, 4.5vw, 24px);
     text-align: center;
+     display: none;
   
 }
 .tiktok-card {
@@ -282,7 +283,7 @@ body {
 }
 
 .tiktok-card { background: linear-gradient(135deg, #000000, #1f1f1f); }
-.lazada-card { background: linear-gradient(135deg, #7f0fff, #5c5cff); }
+.lazada-card { background: linear-gradient(135deg, #FFFFFF, #D3D3D3); }
 .shopee-card { background: linear-gradient(135deg, #ff7a18, #ff3c00); }
 
 /* RESPONSIVE BREAKPOINTS */
