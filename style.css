@@ -286,7 +286,7 @@ body {
 }
 
 .lazada-card:hover{
-
+   transform: translateY(+3px);
 opacity: 50%;
     
 }
