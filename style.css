@@ -200,6 +200,7 @@ body {
 .carousel-btn:hover {
     background: #ffffff;
     transform: translateY(-50%) scale(1.1);
+    
 }
 
 .carousel-btn i {
@@ -288,6 +289,7 @@ body {
 .lazada-card:hover{
    transform: translateY(+3px);
 opacity: 50%;
+         filter: grayscale(100%);
     
 }
 .tiktok-card {
